@@ -1,55 +1,58 @@
 <div class="row">
-  <div class="col-md-4 col-sm-12">
-    <div class="form-group">
-      <label for="location" class="sr-only">Location</label>
-      <input required class="form-control" type="text" id="location" placeholder="Location">
+  <form ng-submit="submit()">
+    <div class="col-md-4 col-sm-12">
+      <div class="form-group">
+        <label for="location" class="sr-only">Location</label>
+        <input required class="form-control" type="text" ng-model="location" id="location" placeholder="Location">
+      </div>
     </div>
-  </div>
-  <div class="col-md-2 col-sm-6">
-    <div class="form-group input-group">
-      <input type="text" class="form-control"
-          uib-datepicker-popup="MM/dd/yyyy"
-          ng-model="dateStart.val"
-          is-open="dateStart.opened"
-          min-date="minDate" max-date="maxDate"
-          ng-required="true"
-          close-text="Close"/>
-      <span class="input-group-btn">
-        <button type="button" class="btn btn-default" ng-click="dateStart.open()"><i class="glyphicon glyphicon-calendar"></i></button>
-      </span>
+    <div class="col-md-2 col-sm-6">
+      <div class="form-group input-group">
+        <input type="text" class="form-control"
+            uib-datepicker-popup="MM/dd/yyyy"
+            ng-model="dateStart.val"
+            is-open="dateStart.opened"
+            min-date="minDate" max-date="maxDate"
+            ng-required="true"
+            close-text="Close"/>
+        <span class="input-group-btn">
+          <button type="button" class="btn btn-default" ng-click="dateStart.open()"><i class="glyphicon glyphicon-calendar"></i></button>
+        </span>
+      </div>
     </div>
-  </div>
-  <div class="col-md-2 col-sm-6">
-    <div class="form-group">
-      <uib-timepicker ng-model="timeStart"
-          hour-step="1" minute-step="30"
-          show-meridian="true"
-          show-spinners="false">
-      </uib-timepicker>
+    <div class="col-md-2 col-sm-6">
+      <div class="form-group">
+        <uib-timepicker ng-model="timeStart"
+            hour-step="1" minute-step="30"
+            show-meridian="true"
+            show-spinners="false">
+        </uib-timepicker>
+      </div>
     </div>
-  </div>
-  <div class="col-md-2 col-sm-6">
-    <div class="form-group input-group">
-      <input type="text" class="form-control"
-          uib-datepicker-popup="MM/dd/yyyy"
-          ng-model="dateEnd.val"
-          is-open="dateEnd.opened"
-          min-date="minDate" max-date="maxDate"
-          ng-required="true"
-          close-text="Close"/>
-      <span class="input-group-btn">
-        <button type="button" class="btn btn-default" ng-click="dateEnd.open()"><i class="glyphicon glyphicon-calendar"></i></button>
-      </span>
+    <div class="col-md-2 col-sm-6">
+      <div class="form-group input-group">
+        <input type="text" class="form-control"
+            uib-datepicker-popup="MM/dd/yyyy"
+            ng-model="dateEnd.val"
+            is-open="dateEnd.opened"
+            min-date="minDate" max-date="maxDate"
+            ng-required="true"
+            close-text="Close"/>
+        <span class="input-group-btn">
+          <button type="button" class="btn btn-default" ng-click="dateEnd.open()"><i class="glyphicon glyphicon-calendar"></i></button>
+        </span>
+      </div>
     </div>
-  </div>
-  <div class="col-md-2 col-sm-6">
-    <div class="form-group">
-      <uib-timepicker ng-model="timeEnd"
-          hour-step="1" minute-step="30"
-          show-meridian="true"
-          show-spinners="false">
-      </uib-timepicker>
+    <div class="col-md-2 col-sm-6">
+      <div class="form-group">
+        <uib-timepicker ng-model="timeEnd"
+            hour-step="1" minute-step="30"
+            show-meridian="true"
+            show-spinners="false">
+        </uib-timepicker>
+      </div>
     </div>
-  </div>
+    <input type="submit" style="position: absolute; left: -9999px; width: 1px; height: 1px;"/>
+  </form>
 </div>
 <div ui-view></div>
