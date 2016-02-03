@@ -19,14 +19,14 @@ angular.module('hotwireSearchApp')
       open: function() {
         this.opened = true;
       }
-    }
+    };
     $scope.dateEnd = {
       val: new Date().setDate($scope.minDate.getDate() + cfg.defaultDuration),
       opened: false,
       open: function() {
         this.opened = true;
       }
-    }
+    };
 
     var noon = new Date();
     noon.setHours(12);
