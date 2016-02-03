@@ -11,7 +11,7 @@ angular.module('hotwireSearchApp')
   .service('searchService', function (cfg, $rootScope, $state, $http) {
     this.results = [];
 
-    this.subscribe = function(scope, callback) {
+    this.subscribe = function(scope, callback) { // Allow service users to attach functions to the change of results
       var handler = $rootScope.$on('search-result-change', callback);
       scope.$on('$destroy', handler);
     };
@@ -41,9 +41,10 @@ angular.module('hotwireSearchApp')
             '&pickuptime=' + timeStart +
             '&dropofftime=' + timeEnd
       }).then(function successCallback(response) {
-          if (response.data.StatusCode == '0') {
-            this.results = response.data.Result;
-            $state.go('search.results');
+          if (response.data.StatusCode == '0') { // If the request was OK
+            this.results = response.data.Result; // Store the results in the service
+            $rootScope.$emit('search-result-change'); // Notify anybody watching
+            $state.go('search.results'); // Switch to the search results if we aren't there already
           } else {
             // There be errors
             console.log(response);
