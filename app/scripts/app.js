@@ -36,7 +36,7 @@ angular
       });
   })
   .constant('cfg', {
-    apiUrl: 'https://api.hotwire.com/v1/',
+    apiUrl: 'https://api.hotwire.com/v1',
     apiKey: 'cuaj6ejw7dh8je7mjffawr6a',
     dateRange: 330, // Max days in the future
     defaultDuration: 7 // Default reservation duration
