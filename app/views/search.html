@@ -25,8 +25,17 @@
     </div>
   </div>
   <div class="col-xs-2">
-    <div class="form-group">
-      <input required class="form-control" type="date">
+    <div class="form-group input-group">
+      <input type="text" class="form-control"
+          uib-datepicker-popup="MM/dd/yyyy"
+          ng-model="dateEnd.val"
+          is-open="dateEnd.opened"
+          min-date="minDate" max-date="maxDate"
+          ng-required="true"
+          close-text="Close"/>
+      <span class="input-group-btn">
+        <button type="button" class="btn btn-default" ng-click="dateEnd.open()"><i class="glyphicon glyphicon-calendar"></i></button>
+      </span>
     </div>
   </div>
   <div class="col-xs-2">
