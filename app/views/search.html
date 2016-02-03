@@ -21,7 +21,11 @@
   </div>
   <div class="col-xs-2">
     <div class="form-group">
-      <input required class="form-control" type="time">
+      <uib-timepicker ng-model="timeStart"
+          hour-step="1" minute-step="30"
+          show-meridian="true"
+          show-spinners="false">
+      </uib-timepicker>
     </div>
   </div>
   <div class="col-xs-2">
@@ -40,7 +44,11 @@
   </div>
   <div class="col-xs-2">
     <div class="form-group">
-      <input required class="form-control" type="time">
+      <uib-timepicker ng-model="timeEnd"
+          hour-step="1" minute-step="30"
+          show-meridian="true"
+          show-spinners="false">
+      </uib-timepicker>
     </div>
   </div>
 </div>

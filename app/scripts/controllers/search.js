@@ -28,6 +28,12 @@ angular.module('hotwireSearchApp')
       }
     }
 
+    var noon = new Date();
+    noon.setHours(12);
+    noon.setMinutes(0);
+    $scope.timeStart = new Date(noon.getTime());
+    $scope.timeEnd = new Date(noon.getTime());
+
     this.awesomeThings = [
       'HTML5 Boilerplate',
       'AngularJS',
