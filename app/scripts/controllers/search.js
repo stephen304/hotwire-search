@@ -8,10 +8,10 @@
  * Controller of the hotwireSearchApp
  */
 angular.module('hotwireSearchApp')
-  .controller('SearchCtrl', function ($scope) {
+  .controller('SearchCtrl', function (cfg, $scope) {
 
     $scope.minDate = new Date();
-    $scope.maxDate = new Date().setDate($scope.minDate.getDate() + 330);
+    $scope.maxDate = new Date().setDate($scope.minDate.getDate() + cfg.dateRange);
 
     $scope.dateStart = {
       val: new Date(),
@@ -21,7 +21,7 @@ angular.module('hotwireSearchApp')
       }
     }
     $scope.dateEnd = {
-      val: new Date().setDate($scope.minDate.getDate() + 7),
+      val: new Date().setDate($scope.minDate.getDate() + cfg.defaultDuration),
       opened: false,
       open: function() {
         this.opened = true;

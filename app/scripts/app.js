@@ -26,5 +26,7 @@ angular
       });
   })
   .constant('cfg', {
-    apiUrl: 'api.hotwire.com/v1/search/'
+    apiUrl: 'https://api.hotwire.com/v1/',
+    dateRange: 330, // Max days in the future
+    defaultDuration: 7 // Default reservation duration
   });
