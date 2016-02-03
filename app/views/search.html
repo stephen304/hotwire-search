@@ -1,0 +1,37 @@
+<div class="row">
+  <div class="col-xs-4">
+    <div class="form-group">
+      <label for="location" class="sr-only">Location</label>
+      <input required class="form-control" type="text" id="location" placeholder="Location">
+    </div>
+  </div>
+  <div class="col-xs-2">
+    <div class="form-group input-group">
+      <input type="text" class="form-control"
+          uib-datepicker-popup="MM/dd/yyyy"
+          ng-model="dateStart.val"
+          is-open="dateStart.opened"
+          min-date="minDate" max-date="maxDate"
+          ng-required="true"
+          close-text="Close"/>
+      <span class="input-group-btn">
+        <button type="button" class="btn btn-default" ng-click="dateStart.open()"><i class="glyphicon glyphicon-calendar"></i></button>
+      </span>
+    </div>
+  </div>
+  <div class="col-xs-2">
+    <div class="form-group">
+      <input required class="form-control" type="time">
+    </div>
+  </div>
+  <div class="col-xs-2">
+    <div class="form-group">
+      <input required class="form-control" type="date">
+    </div>
+  </div>
+  <div class="col-xs-2">
+    <div class="form-group">
+      <input required class="form-control" type="time">
+    </div>
+  </div>
+</div>
