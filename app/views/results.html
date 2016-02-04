@@ -1,9 +1,18 @@
 <div class="alert alert-warning" role="alert" ng-show="!!!results.length" ng-cloak><strong>Notice:</strong> No Results</div>
-<div class="table-responsive" ng-show="results">
+<div class="table-responsive" ng-show="results.length" ng-cloak>
   <table class="table">
+    <thead>
+      <tr>
+        <td>Car Type</td>
+        <td>Daily Rate</td>
+        <td>TotalPrice</td>
+        <td></td>
+      </tr>
+    </thead>
     <tbody>
       <tr ng-repeat="car in results">
-        <td>{{car.CarTypeCode}}</td>
+        <td>{{car.CarTypeName}}</td>
+        <td>{{car.DailyRate}}</td>
         <td>{{car.TotalPrice}}</td>
         <td><button type="button" class="btn btn-primary btn-xs pull-right" ui-sref="search.car({id: car.HWRefNumber})">View Details <i class="fa fa-chevron-right"></i></button></td>
       </tr>

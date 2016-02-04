@@ -44,6 +44,14 @@ angular.module('hotwireSearchApp')
           if (response.data.StatusCode == '0') { // If the request was OK
             this.results = response.data.Result; // Store the results in the service
             this.types = response.data.MetaData.CarMetaData.CarTypes;
+            this.typesDict = {};
+            for (var i = 0; i < this.types.length; i++) {
+              this.typesDict[this.types[i].CarTypeCode] = this.types[i].CarTypeName;
+            }
+            for (var i = 0; i < this.results.length; i++) {
+              this.results[i].CarTypeName = this.typesDict[this.results[i].CarTypeCode];
+            }
+
             $rootScope.$emit('search-result-change'); // Notify anybody watching
             $state.go('search.results'); // Switch to the search results if we aren't there already
           } else {

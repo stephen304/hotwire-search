@@ -1,7 +1,7 @@
 <div class="col-md-6 col-md-offset-3" ng-show="car" ng-cloak>
   <div class="panel panel-default">
     <div class="panel-heading">
-      <h3 class="panel-title">{{car.CarTypeCode}}</h3>
+      <h3 class="panel-title">{{car.CarTypeName}}</h3>
     </div>
     <a href="{{car.DeepLink}}"><button type="button" class="btn btn-primary btn-lg book">Book This Car</button></a>
     <table class="table">
@@ -11,8 +11,32 @@
           <td>{{car.CarTypeCode}}</td>
         </tr>
         <tr>
+          <td>Pickup Time:</td>
+          <td>{{car.PickupDay}} {{car.PickupTime}}</td>
+        </tr>
+        <tr>
+          <td>Dropoff Time:</td>
+          <td>{{car.DropoffDay}} {{car.DropoffTime}}</td>
+        </tr>
+        <tr>
+          <td>Location:</td>
+          <td>{{car.LocationDescription}}</td>
+        </tr>
+        <tr>
+          <td>Mileage Limitation:</td>
+          <td>{{car.MileageDescription}}</td>
+        </tr>
+        <tr>
+          <td>Renting for:</td>
+          <td>{{car.RentalDays}} Days</td>
+        </tr>
+        <tr>
           <td>Daily Rate:</td>
           <td>{{car.DailyRate}} {{car.CurrencyCode}}</td>
+        </tr>
+        <tr>
+          <td>Subtotal:</td>
+          <td>{{car.SubTotal}} {{car.CurrencyCode}}</td>
         </tr>
         <tr>
           <td>Taxes and Fees:</td>
