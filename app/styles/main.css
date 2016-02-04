@@ -13,6 +13,11 @@ body {
   display: none !important;
 }
 
+button.book {
+  border-radius: 0;
+  width: 100%;
+}
+
 /* Everything but the jumbotron gets side spacing for mobile first views */
 .header,
 .marketing,

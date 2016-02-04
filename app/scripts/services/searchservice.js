@@ -56,4 +56,13 @@ angular.module('hotwireSearchApp')
         });
     };
 
+    this.getCar = function(id) {
+      for(var i = 0; i < this.results.length; i++) {
+        if (this.results[i].HWRefNumber === id) {
+          return this.results[i];
+        }
+      }
+      return null;
+    };
+
   });

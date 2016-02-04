@@ -1,1 +1,28 @@
-<p>This is the CAR view.</p>
+<div class="col-md-6 col-md-offset-3" ng-show="car" ng-cloak>
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h3 class="panel-title">{{car.CarTypeCode}}</h3>
+    </div>
+    <a href="{{car.DeepLink}}"><button type="button" class="btn btn-primary btn-lg book">Book This Car</button></a>
+    <table class="table">
+      <tbody>
+        <tr>
+          <td>Car Type:</td>
+          <td>{{car.CarTypeCode}}</td>
+        </tr>
+        <tr>
+          <td>Daily Rate:</td>
+          <td>{{car.DailyRate}} {{car.CurrencyCode}}</td>
+        </tr>
+        <tr>
+          <td>Taxes and Fees:</td>
+          <td>{{car.TaxesAndFees}} {{car.CurrencyCode}}</td>
+        </tr>
+        <tr>
+          <td>Total Price:</td>
+          <td>{{car.TotalPrice}} {{car.CurrencyCode}}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
