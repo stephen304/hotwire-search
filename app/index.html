@@ -17,7 +17,7 @@
     <link rel="stylesheet" href="styles/main.css">
     <!-- endbuild -->
   </head>
-  <body ng-app="hotwireSearchApp">
+  <body ng-app="hotwireSearchApp" ng-controller="MainCtrl">
     <!--[if lte IE 9]>
       <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
@@ -38,6 +38,13 @@
         </div>
         <!--/.nav-collapse -->
       </div>
+    </div>
+
+    <div class="container">
+      <div class="alert alert-{{alert.class}} alert-dismissible" role="alert" ng-show="alert.message" ng-cloak>
+        <button type="button" class="close" aria-label="Close" ng-click="dismiss()"><span aria-hidden="true">&times;</span></button>
+        <strong ng-if="alert.prefix" ng-cloak>{{alert.prefix}}</strong> {{alert.message}}
+        </div>
     </div>
 
     <div class="container" ui-view></div>
@@ -67,6 +74,8 @@
     <script src="scripts/controllers/results.js"></script>
     <script src="scripts/controllers/car.js"></script>
     <script src="scripts/services/searchservice.js"></script>
+    <script src="scripts/controllers/main.js"></script>
+    <script src="scripts/services/alertservice.js"></script>
     <!-- endbuild -->
 </body>
 </html>

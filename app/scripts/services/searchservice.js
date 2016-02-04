@@ -8,8 +8,9 @@
  * Service in the hotwireSearchApp.
  */
 angular.module('hotwireSearchApp')
-  .service('searchService', function (cfg, $rootScope, $state, $http) {
+  .service('searchService', function (cfg, $rootScope, $state, $http, alertService) {
     this.results = [];
+    alertService.dismiss();
 
     this.subscribe = function(scope, callback) { // Allow service users to attach functions to the change of results
       var handler = $rootScope.$on('search-result-change', callback);
@@ -17,6 +18,8 @@ angular.module('hotwireSearchApp')
     };
 
     this.submit = function(location, dateStart, timeStart, dateEnd, timeEnd) {
+      alertService.dismiss(); // Clear any error messages
+
       dateStart = ('0' + (dateStart.getMonth() + 1)).slice(-2) + '/' + // Why does getMonth start at 0...
                   ('0' + dateStart.getDate()).slice(-2) + '/' +
                    dateStart.getFullYear();
@@ -57,10 +60,10 @@ angular.module('hotwireSearchApp')
           } else {
             // There be errors
             console.log(response);
+            alertService.set(response.data.Errors.Error.ErrorMessage, 'danger');
           }
         }.bind(this), function errorCallback() {
-          // called asynchronously if an error occurs
-          // or server returns response with an error status.
+          alertService.set('An error occurred when contacting the server!', 'danger');
         });
     };
 
