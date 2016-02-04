@@ -5,7 +5,7 @@
       <tr ng-repeat="car in results">
         <td>{{car.CarTypeCode}}</td>
         <td>{{car.TotalPrice}}</td>
-        <td><button type="button" class="btn btn-primary btn-xs pull-right">View Details <i class="fa fa-chevron-right"></i></button></td>
+        <td><button type="button" class="btn btn-primary btn-xs pull-right" ui-sref="search.car({id: car.HWRefNumber})">View Details <i class="fa fa-chevron-right"></i></button></td>
       </tr>
     </tbody>
   </table>

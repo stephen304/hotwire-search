@@ -43,6 +43,7 @@ angular.module('hotwireSearchApp')
       }).then(function successCallback(response) {
           if (response.data.StatusCode == '0') { // If the request was OK
             this.results = response.data.Result; // Store the results in the service
+            this.types = response.data.MetaData.CarMetaData.CarTypes;
             $rootScope.$emit('search-result-change'); // Notify anybody watching
             $state.go('search.results'); // Switch to the search results if we aren't there already
           } else {
