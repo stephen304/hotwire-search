@@ -1,6 +1,6 @@
 <div class="row">
   <form ng-submit="submit()">
-    <div class="col-md-4 col-sm-12">
+    <div class="col-md-3 col-sm-12">
       <div class="form-group">
         <label for="location" class="sr-only">Location</label>
         <input required class="form-control" type="text" ng-model="location" id="location" placeholder="Location">
@@ -52,7 +52,10 @@
         </uib-timepicker>
       </div>
     </div>
-    <input type="submit" style="position: absolute; left: -9999px; width: 1px; height: 1px;"/>
+    <div class="col-md-1 col-sm-12">
+      <button type="submit" class="btn btn-primary hidden-md search">Search</button>
+      <button type="submit" class="btn btn-primary hidden-lg hidden-sm hidden-xs search"><i class="fa fa-search"></i></button>
+    </div>
   </form>
 </div>
 <div ui-view></div>
