@@ -12,6 +12,7 @@ angular
   .module('hotwireSearchApp', [
     'ui.router',
     'ui.bootstrap',
+    'angular-loading-bar',
     'ngAnimate',
     'ngAria'
   ])
