@@ -11,9 +11,9 @@ angular.module('hotwireSearchApp')
   .service('alertService', function ($rootScope) {
 
     var prefixes = {
-      danger: "Error:",
-      warning: "Notice:"
-    }
+      danger: 'Error:',
+      warning: 'Notice:'
+    };
 
     this.message = null;
     this.prefix = null;
@@ -29,10 +29,10 @@ angular.module('hotwireSearchApp')
       this.prefix = prefixes[messageClass];
       this.class = messageClass;
       $rootScope.$emit('alert-change');
-    }
+    };
 
     this.subscribe = function(scope, callback) {
       var handler = $rootScope.$on('alert-change', callback);
       scope.$on('$destroy', handler);
-    }
+    };
   });

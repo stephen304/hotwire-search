@@ -44,14 +44,14 @@ angular.module('hotwireSearchApp')
             '&pickuptime=' + timeStart +
             '&dropofftime=' + timeEnd
       }).then(function successCallback(response) {
-          if (response.data.StatusCode == '0') { // If the request was OK
+          if (response.data.StatusCode === '0') { // If the request was OK
             this.results = response.data.Result; // Store the results in the service
             this.types = response.data.MetaData.CarMetaData.CarTypes;
             this.typesDict = {};
             for (var i = 0; i < this.types.length; i++) {
               this.typesDict[this.types[i].CarTypeCode] = this.types[i].CarTypeName;
             }
-            for (var i = 0; i < this.results.length; i++) {
+            for (i = 0; i < this.results.length; i++) {
               this.results[i].CarTypeName = this.typesDict[this.results[i].CarTypeCode];
             }
 

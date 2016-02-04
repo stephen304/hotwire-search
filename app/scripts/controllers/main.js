@@ -25,8 +25,7 @@ angular.module('hotwireSearchApp')
 
     $scope.dismiss = function() {
       alertService.dismiss();
-    }
-
+    };
 
     this.awesomeThings = [
       'HTML5 Boilerplate',
