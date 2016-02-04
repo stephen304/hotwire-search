@@ -13,6 +13,11 @@ body {
   display: none !important;
 }
 
+div.row.search form > div {
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
 button.book {
   border-radius: 0;
   width: 100%;
